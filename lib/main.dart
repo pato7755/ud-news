@@ -37,7 +37,7 @@ class _WebpageState extends State<Webpage> {
         child: Scaffold(
             key: _globalKey,
             appBar: AppBar(
-              title: const Text('UDNews'),
+              title: const Text('UD News'),
               bottom: _createProgressIndicator(),
             ),
             body: Builder(builder: (BuildContext context) {
