@@ -54,9 +54,6 @@ class _WebpageState extends State<Webpage> {
                   onProgress: (int progress) {
                     print("WebView is loading (progress : $progress%)");
                   },
-                  javascriptChannels: {
-                    _toasterJavascriptChannel(context),
-                  },
                   navigationDelegate: (NavigationRequest request) {
                     print('allowing navigation to $request');
                     setState(() {
@@ -141,13 +138,13 @@ class _WebpageState extends State<Webpage> {
     }
   }
 
-  JavascriptChannel _toasterJavascriptChannel(BuildContext context) {
-    return JavascriptChannel(
-        name: 'Toaster',
-        onMessageReceived: (JavascriptMessage message) {
-          Scaffold.of(context).showSnackBar(
-            SnackBar(content: Text(message.message)),
-          );
-        });
-  }
+  // JavascriptChannel _toasterJavascriptChannel(BuildContext context) {
+  //   return JavascriptChannel(
+  //       name: 'Toaster',
+  //       onMessageReceived: (JavascriptMessage message) {
+  //         Scaffold.of(context).showSnackBar(
+  //           SnackBar(content: Text(message.message)),
+  //         );
+  //       });
+  // }
 }
